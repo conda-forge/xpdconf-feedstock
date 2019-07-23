@@ -1,6 +1,6 @@
 {% set name = "xpdConf" %}
-{% set version = "0.3.0" %}
-{% set sha256 = "365bc0ba5fc50b6ac6f617702399ed0ae97987674b7a04301b869207c4daf0e0" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "71b1d94ea946b36aad2b103cf748c71e144f1a699a9855f42368efefce50134e" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/xpdAcq/{{ name }}/releases/download/{{ version }}/{{ version }}.tar.gz
+  url: https://github.com/xpdAcq/{{ name }}/releases/download/{{ version }}/xpdConf-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
