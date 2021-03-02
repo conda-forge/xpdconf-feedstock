@@ -1,6 +1,6 @@
 {% set name = "xpdConf" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "2a1ca83ac3351180eea04df0c5c6e0e3b8fb7d0bf954215edf07f0621f56143a" %}
+{% set version = "0.4.3" %}
+{% set sha256 = "b3795b20a85b23fec4c55382211f51e668c0123501c111086d007518794ffe89" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +17,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
     - setuptools
@@ -32,10 +32,10 @@ test:
 
 about:
   home: http://github.com/xpdAcq/xpdConf
-  license: BSD-3-Clause 
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Configuration for XPD beamlines'
+  summary: Configuration for XPD beamlines
 
 extra:
   recipe-maintainers:
