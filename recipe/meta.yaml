@@ -1,6 +1,6 @@
 {% set name = "xpdConf" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "2a1ca83ac3351180eea04df0c5c6e0e3b8fb7d0bf954215edf07f0621f56143a" %}
+{% set version = "0.4.5" %}
+{% set sha256 = "63d50b8cce841eb47a45aa92376db48843a3e1db4e014eead7ad22399ce33e9f" %}
 
 package:
   name: {{ name|lower }}
@@ -8,27 +8,28 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/xpdAcq/{{ name }}/releases/download/{{ version }}/xpdConf-{{ version }}.tar.gz
+  url: https://github.com/xpdAcq/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install --no-deps .
 
 requirements:
   build:
-    - python
+    - python >=3.8
     - pip
     - setuptools
   run:
-    - python
+    - python >=3.8
     - databroker
     - pyyaml
 
 test:
   imports:
     - xpdconf
+    - xpdconf.conf
 
 about:
   home: http://github.com/xpdAcq/xpdConf
@@ -36,8 +37,10 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: 'Configuration for XPD beamlines'
+  doc_url: https://github.com/xpdAcq/xpdConf
+  dev_url: https://github.com/xpdAcq/xpdConf
 
 extra:
   recipe-maintainers:
-    - chiahaoliu
     - sbillinge
+    - st3107
