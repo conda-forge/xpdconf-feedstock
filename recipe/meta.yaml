@@ -22,7 +22,7 @@ requirements:
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >=3.8, <3.10
     - databroker =1.2
     - pyyaml
 
