@@ -23,7 +23,7 @@ requirements:
     - setuptools
   run:
     - python >=3.8
-    - databroker =1.x
+    - databroker =1.2
     - pyyaml
 
 test:
