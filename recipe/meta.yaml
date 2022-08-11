@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install --no-deps .
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
     - setuptools
   run:
     - python >=3.8, <3.10
-    - databroker =1.2
+    - databroker <2.0.0a
     - pyyaml
 
 test:
