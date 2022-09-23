@@ -15,10 +15,9 @@ build:
   number: 0
 
 requirements:
-  build:
+  host:
     - python >=3.8
     - pip
-    - setuptools
   run:
     - python >=3.8
     - databroker
