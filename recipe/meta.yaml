@@ -1,20 +1,18 @@
-{% set name = "xpdConf" %}
-{% set version = "0.4.5" %}
-{% set sha256 = "63d50b8cce841eb47a45aa92376db48843a3e1db4e014eead7ad22399ce33e9f" %}
+{% set name = "xpdconf" %}
+{% set version = "0.4.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/xpdAcq/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xpdconf-{{ version }}.tar.gz
+  sha256: 5be6d1906ac889286748785068b8579184b92b8fa9abf9bdd98a81f361557f87
 
 build:
   noarch: python
-  number: 1
   script: {{ PYTHON }} -m pip install --no-deps .
+  number: 0
 
 requirements:
   build:
