@@ -6,24 +6,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xpdconf-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xpdconf-{{ version }}.tar.gz
   sha256: 5be6d1906ac889286748785068b8579184b92b8fa9abf9bdd98a81f361557f87
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps .
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - databroker
     - pyyaml
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - xpdconf
     - xpdconf.conf
